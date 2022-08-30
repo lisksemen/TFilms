@@ -13,6 +13,9 @@ import ua.com.slisak.tfilms.repository.FilmRepository;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Controller for CRUD operations with film entity
+ */
 @Controller
 @AllArgsConstructor
 public class FilmsController {

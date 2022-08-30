@@ -17,7 +17,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
+/**
+ * Controller for CRUD operations with invoice entity
+ */
 @Controller
 @AllArgsConstructor
 public class InvoicesController {

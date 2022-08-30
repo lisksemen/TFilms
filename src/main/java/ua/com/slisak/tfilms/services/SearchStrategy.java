@@ -7,6 +7,10 @@ import ua.com.slisak.tfilms.entities.PriceInterface;
 
 import java.util.List;
 
+/**
+ * Implemented strategy pattern
+ * @param <E> Entity with getPrice() method
+ */
 public interface SearchStrategy<E extends PriceInterface> {
     List<E> search(double number, JpaRepository<E, Integer> repository);
 

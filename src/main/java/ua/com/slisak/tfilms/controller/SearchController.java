@@ -13,6 +13,9 @@ import ua.com.slisak.tfilms.services.SearchStrategy;
 
 import java.util.List;
 
+/**
+ * Controller for search operations
+ */
 @Controller
 @AllArgsConstructor
 public class SearchController {

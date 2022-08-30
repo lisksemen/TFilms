@@ -31,6 +31,7 @@ public class SearchService {
                 .findAll()
                 .stream()
                 .min(Comparator.comparing(Invoice::getTotal));
+
         List<Invoice> result = new ArrayList<>();
 
         inv.ifPresent(result::add);
@@ -42,6 +43,7 @@ public class SearchService {
                 .findAll()
                 .stream()
                 .max(Comparator.comparing(Film::getPrice));
+
         List<Film> result = new ArrayList<>();
 
         inv.ifPresent(result::add);
@@ -72,7 +74,11 @@ public class SearchService {
     }
 
     public List<Invoice> searchInvoicesById(int invoiceId) {
-        return invoiceRepository.findAll().stream().filter(invoice -> invoice.getId() == invoiceId).toList();
+        return invoiceRepository
+                .findAll()
+                .stream()
+                .filter(invoice -> invoice.getId() == invoiceId)
+                .toList();
     }
 
 
