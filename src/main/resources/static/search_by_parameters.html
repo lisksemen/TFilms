@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search by parameters</title>
+</head>
+<body>
+<h1>Search by parameters</h1>
+<h2>Films:</h2>
+<br>
+<form action="/search/films/by_parameters/by_name" method="post">
+    <label for="film_name">Film name to search:</label>
+    <input type="text" name="film_name" id="film_name">
+    <input type="submit">
+</form>
+<form action="/search/films/by_parameters/by_price" method="post">
+    <label for="film_param">Params to search for films by price:</label>
+    <select name="param" id="film_param">
+        <option value="BIGGER">&gt;</option>
+        <option value="EQUALS">&equals;</option>
+        <option value="LESS">&lsaquo;</option>
+    </select>
+    <label for="film_number">Price:</label>
+    <input type="number" name="film_number" id="film_number">
+    <input type="submit">
+</form>
+<h2>Invoices:</h2>
+<br>
+<form action="/search/invoices/by_parameters/by_id" method="post">
+    <label for="invoiceId">Invoice id to search:</label>
+    <input type="text" name="invoiceId" id="invoiceId">
+    <input type="submit">
+</form>
+<form action="/search/invoices/by_parameters/by_price" method="post">
+    <label for="invoice_param">Params to search for invoices by price:</label>
+    <select name="invoice_param" id="invoice_param">
+        <option value="BIGGER">&gt;</option>
+        <option value="EQUALS">&equals;</option>
+        <option value="LESS">&lsaquo;</option>
+    </select>
+    <label for="invoice_number">Total:</label>
+    <input type="number" name="invoice_number" id="invoice_number">
+    <input type="submit">
+</form>
+</body>
+</html>

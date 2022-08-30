@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add invoice</title>
+</head>
+<body>
+<form action="/invoices/add" method="post">
+    <label for="customer">Customers name:</label>
+    <input type="text" name="customer" id="customer">
+    <br>
+
+    <label> Films:
+        <input type="checkbox"
+            th:each="film : ${list}"
+            th:name="${film.id}"
+            th:text="${film.name} + ' ' + ${film.price}"
+            th:value="${film.id}">
+    </label>
+    <br>
+    <input type="submit" value="Add">
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List orders</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+<table th:each="invoice : ${list}">
+    <thead>
+    <tr>
+        <th>Invoice #</th>
+        <th th:text="*{invoice.id}"></th>
+        <th><a th:href="@{/invoices/delete/{id}(id=${invoice.id})}">Delete</a></th>
+    </tr>
+    <tr>
+        <th>Customer</th>
+        <th th:text="${invoice.customer}"></th>
+        <th><a th:href="@{/invoices/edit/{id}(id=${invoice.id})}">Edit</a></th>
+
+    </tr>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="f, counter : ${invoice.films}">
+        <td th:text="${counter.index} + 1"></td>
+        <td th:text="${f.name}"></td>
+        <td th:text="${f.price}"></td>
+    </tr>
+    <tr>
+        <td th:text="'total ' + ${invoice.total}" colspan="3"></td>
+    </tr>
+    </tbody>
+
+</table>
+</body>
+</html>

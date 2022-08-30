@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form action="/invoices/edit/" method="post">
+    <label for="customer">Customers name:</label>
+    <input type="text" name="customer" id="customer" th:value="${invoice.customer}">
+    <br>
+
+    <label> Films:
+        <input type="checkbox"
+               th:each="film : ${list}"
+               th:name="${film.id}"
+               th:text="${film.name} + ' ' + ${film.price}"
+               th:value="${film.id}"
+               th:checked="${invoice.films.contains(film)}">
+    </label>
+    <br>
+    <input type="hidden" name="id" id="id" th:value="${invoice.id}">
+    <input type="submit" value="Edit">
+</form>
+</body>
+</html>
