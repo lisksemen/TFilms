@@ -67,6 +67,7 @@ public class SearchController {
 
     @PostMapping("/search/films/by_parameters/by_price")
     public String searchFilmsByParams(@RequestParam double film_number, @RequestParam String film_param, Model model) {
+        System.out.println();
         SearchStrategy<Film> strategy = switch (film_param) {
             case "BIGGER" -> SearchStrategy.FILMS_BIGGER_THAN;
             case "EQUALS" -> SearchStrategy.FILMS_EQUALS_TO;

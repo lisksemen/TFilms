@@ -91,7 +91,6 @@ public class InvoicesController {
                     .filter(Optional::isPresent)
                     .map(Optional::get)
                     .collect(Collectors.toSet());
-            System.out.println(films);
             invoice.setFilms(films);
             invoiceRepository.save(invoice);
             return "redirect:/invoices/list";
